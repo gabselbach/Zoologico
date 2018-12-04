@@ -62,27 +62,115 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <h2 id="animal">Triagem</h2>
+            <h2 id="alimentacao">Vendas</h2>
+            <div class="line"></div>
+            <h2 id="alimentacao">Alimentação</h2>
             <form>
               <div class="form-group">
                 <label for="exampleInputEmail1">Nome:</label>
-                <input type="text" class="form-control" placeholder="Campo de texto">
+                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Telefone:</label>
-                <!-- Colocar os tipos -->
-                <input type="text" class="form-control" placeholder="Campo de texto">
+                <label for="exampleInputEmail1">Preço:</label>
+                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Tipo:</label>
-                <input type="text" class="form-control" placeholder="Campo de texto">
+                <div class="radio">
+                  <label><input type="radio" name="optradio" checked> Normal</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="optradio"> Vegetariana</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="optradio"> Bebida</label>
+                </div>
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">E-mail:</label>
-                <input type="text" class="form-control" placeholder="Campo de texto">
+                <label for="exampleInputEmail1">Validade:</label>
+                <input type="date" required="required" class="form-control" placeholder="Digite aqui">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Quantidade:</label>
+                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Quantidade ideal:</label>
+                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
+            <div class="line"></div>
+            <h2 id="alimentacao">Souvenir</h2>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nome:</label>
+                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Preço:</label>
+                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Material:</label>
+                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Quantidade:</label>
+                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Quantidade Ideal:</label>
+                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            <div class="line"></div>
+            <h2 id="alimentacao">Alimentação</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Preço</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Validade</th>
+                  <th scope="col">Quantidade</th>
+                  <th scope="col">Quantidade Ideal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">-</th>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="line"></div>
+            <h2 id="alimentacao">Souvenir</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Preço</th>
+                  <th scope="col">Material</th>
+                  <th scope="col">Quantidade</th>
+                  <th scope="col">Quantidade Ideal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">-</th>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
     </div>
 
