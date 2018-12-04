@@ -20,6 +20,12 @@
 	include ('../../procedimentos/triagem/seleciona_todos.php'); 
 	?>
 	</table>
+
+	<p>Dados sobre as triagens não podem ser apagados ou alterados,</p>
+	<p> caso se tenha outros dados sobre o animal deve se criar outra triagem</p>
+	<br>
+	<br>
+	<br>
 	<a href="./inserir.php">Triagem</a>
 </body>
 </html>

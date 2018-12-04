@@ -11,5 +11,5 @@ error_reporting(E_ALL);
 		$con->setQuery($sql);
 	 	$con->executeQuery();
     	 $con->disconnect(); //Fecha a execução da query query
-    	 header('location:../../view/funcionario/inserir.php?v=ok');
+    	// header('location:../../view/funcionario/listar.php');
 	}

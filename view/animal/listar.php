@@ -8,6 +8,7 @@
 		<tr>
 			<th>Nome Popular</th>
 			<th>Nome Cientifico</th>
+			<th>Peso</th>
 			<th>deletar</th>
 			<th>alterar</th>
 		</tr>

@@ -9,18 +9,21 @@ error_reporting(E_ALL);
 	$con = new Conexao();
 	$con->setQuery($sql);
  	$con->executeQuery();
- 	$array = $con->Linha();
- 		echo "<tr><td>" . $array['nome_popular'] . "</td>
- 		<td>" . $array['nome']. "</td>
- 		<td>" .  $array['observacoes']. "</td>
-		<td>" . $array['prescricao']. "</td>
-		<td>" . $array['diagnostico']. "</td>";
-		if($array['status']==1)
+ 	$array = $con->fazLinha();
+ 	foreach ($array as $key => $value) {
+
+ 		echo "<tr><td>" . $value['nome_popular'] . "</td>
+ 		<td>" . $value['nome']. "</td>
+ 		<td>" .  $value['observacoes']. "</td>
+		<td>" . $value['prescricao']. "</td>
+		<td>" . $value['diagnostico']. "</td>";
+		if($value['status']==1)
 			echo "<td>Sim</td>";
 		else
 			echo "<td>Não</td>"; 	
 		echo"
-		<td>" . $array['data'] . "</td>
-		<td>" . $array['hora']. "</td>
+		<td>" . $value['data'] . "</td>
+		<td>" . $value['hora']. "</td>
  		</tr>";
+ 	}
 	 $con->disconnect();

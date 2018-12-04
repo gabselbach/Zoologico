@@ -101,7 +101,7 @@
 		
 	}
 	function update(){
-	$sql=" UPDATE Funcionario set nome='$this->nome',atribuicao='$this->atribuição',salario=$this->salario,data_admissao='$this->data_admissão', email='$this->email', cep=$this->cep, rua=$this->rua, n=$this->n WHERE IdFuncionario=$this->idFuncionario";
+	$sql=" UPDATE Funcionario set nome='$this->nome',atribuicao='$this->atribuição',salario=$this->salario,data_admissao='$this->data_admissão', email='$this->email', cep=$this->cep, rua='$this->rua', n=$this->n WHERE IdFuncionario=$this->idFuncionario";
 		return $sql;
 	}
 	function atribuiDados($linha){

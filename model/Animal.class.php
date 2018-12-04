@@ -90,7 +90,6 @@
 		return $sql;
 	}
 		function selectAnimal(){
-			echo $this->idAnimal;
 		$sql ="SELECT * from Animal where idAnimal = $this->idAnimal";
 		return $sql;
 	}

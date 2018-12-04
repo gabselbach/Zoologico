@@ -51,12 +51,12 @@
 	
 	 function insert(){
 
-	 	$sql = "INSERT INTO Alimentacao_Animal VALUES"."(NULL,'$this->nome',$this->tipo,$this->quantidade,'$this->validade')";
+	 	$sql = "INSERT INTO Alimentacao_Animal VALUES"."(NULL,'$this->nome',$this->tipo,$this->quantidade,'$this->validade',NULL)";
 	 return $sql;
 		
 	}
 	function update(){
-	$sql=" UPDATE Funcionario set nome_popular='$this->nome_popular',nome_cientifico='$this->nome_cientifico',peso=$this->peso WHERE IdAnimal=$this->idAnimal";
+	$sql=" UPDATE Alimentacao_Animal set nome='$this->nome',quantidade=$this->quantidade,validade='$this->validade' WHERE idAlimentacao_Animal=$this->idAlimentação_Animal";
 		return $sql;
 	}
 	function atribuiDados($linha){
@@ -67,11 +67,15 @@
 		$this->Alimentação_idAlimentação = $linha['Alimentação_idAlimentação'];
 	}
 	function delete(){
-		$sql = "DELETE table Animal where idAnimal = $this->idAnimal";
+		$sql = "DELETE from Alimentacao_Animal where idAlimentacao_Animal = $this->idAlimentação_Animal";
 		return $sql;
 	}
 	function select(){
-		$sql="SELECT * FROM Animal ";
+		$sql="SELECT * FROM Alimentacao_Animal ";
+		return $sql;
+	}
+	function selectAlimentacao(){
+		$sql ="SELECT * from Alimentacao_Animal where idAlimentacao_Animal = $this->idAlimentação_Animal";
 		return $sql;
 	}
 }

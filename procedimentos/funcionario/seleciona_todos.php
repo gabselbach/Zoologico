@@ -19,10 +19,10 @@ error_reporting(E_ALL);
 						$a = " Veterinario";
 						break;
 					case 3:
-						$a =" haha";
+						$a ="Estoquista";
 						break;
 					default:
-						$a = " dffk<";
+						$a = "Vendedor";
 						break;
 				}
  		echo "<tr><td>". $value['nome']  . "</td>

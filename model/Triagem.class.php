@@ -85,20 +85,12 @@
 		$sql ="INSERT INTO Triagem_has_Funcionario_has_Animal VALUES " ."($this->idTriagem,$this->idFuncionario,$this->idAnimal)";
 		return $sql;
 	}
-	function update(){
-	$sql=" UPDATE Funcionario set nome_popular='$this->nome_popular',nome_cientifico='$this->nome_cientifico',peso=$this->peso WHERE IdAnimal=$this->idAnimal";
-		return $sql;
-	}
 	function atribuiDados($linha){
 		$this->nome_popular = $linha['nome_popular'];
 		$this->nome_cientifico = $linha['nome_cientifico'];
 		$this->peso = $linha['peso'];
 		$this->Funcionario_idFuncionario = $linha['Funcionario_idFuncionario'];
 		$this->Alimentação_idAlimentação = $linha['Alimentação_idAlimentação'];
-	}
-	function delete(){
-		$sql = "DELETE table Animal where idAnimal = $this->idAnimal";
-		return $sql;
 	}
 	function select(){
 		$sql="
