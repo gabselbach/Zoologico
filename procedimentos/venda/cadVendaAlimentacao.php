@@ -31,6 +31,6 @@ error_reporting(E_ALL);
 	 	$con->executeQuery();
 		//fazer o insert dessa parte
     	 $con->disconnect(); //Fecha a execução da query query
-    	 header('location:../../view/venda/listarAlimentacao.php?v=ok');
+    	 header('location:../../view/venda/venda.php');
     	
 	}

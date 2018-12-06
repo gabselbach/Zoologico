@@ -9,5 +9,5 @@
 		$con->setQuery($sql);
 	 	$con->executeQuery();
 	    $con->disconnect(); //Fecha a execução da query query
-	    header('location:../../view/material/listar.php');
+	    header('location:../../view/material/material.php');
 	}

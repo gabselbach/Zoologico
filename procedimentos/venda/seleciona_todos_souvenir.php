@@ -3,7 +3,6 @@ ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
 	require('../../model/Souvenir.class.php');
-	require('../../model/Conexao.class.php');
 	$a = new Souvenir();
 	$sql = $a->select();
 	$con = new Conexao();
@@ -26,7 +25,7 @@ error_reporting(E_ALL);
  			<td>". $value['quantidade_ideal']  . "</td>
 			<td><a href=\"../../procedimentos/venda/deletarSouvenir.php?id=" . $value['cod'] . "\"><img src=\"../../img/lixeira.png\"/></a></td>
 			<td><a href=\"../../view/venda/vendaSouvenir.php?id=" . $value['cod'] . "\">Venda</a></td>
-			<td><a href=\"../../view/venda/alterarSouvenir.php?id=".$value['cod']."\"><img src=\"../../img/engre.png\"/></a></td>
+			<td><a href=\"../../view/venda/Souvenir_alt.php?id=".$value['cod']."\"><img src=\"../../img/engre.png\"/></a></td>
  			</tr>";
  		}
  	}

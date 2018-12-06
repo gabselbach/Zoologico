@@ -3,7 +3,6 @@ ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
 	require('../../model/Triagem.class.php');
-	require('../../model/Conexao.class.php');
 	$t = new Triagem();
 	$sql = $t->select();
 	$con = new Conexao();

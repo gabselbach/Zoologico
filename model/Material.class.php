@@ -43,7 +43,7 @@ error_reporting(E_ALL);
 	}
 	 function insert(){
 
-	 	$sql = "INSERT INTO Material VALUES"."(NULL,'$this->nome',$this->preco,$this->quantidade_atual,$this->quantidade_ideal,'$this->validade',$this->tipo,NULL)";
+	 	$sql = "INSERT INTO Material VALUES"."(NULL,'$this->nome',$this->preco,$this->quantidade_atual,$this->quantidade_ideal,'$this->validade',$this->tipo)";
 	 return $sql;
 		
 	}

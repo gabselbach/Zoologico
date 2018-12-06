@@ -27,14 +27,11 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 align="center">ZooSearch</h3>
-                <img src = "../../analysis.png"/>
+               <a href="../../index.php"> <img src = "../../analysis.png"/>  </a>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Escolha uma das opções abaixo:</p>
-                <li>
-                    <a href="../../index.php">Homepage</a>
-                </li>
                 <li>
                     <a href="../../view/alimentação/alimentacao.php">Alimentação</a>
                 </li>
@@ -63,67 +60,71 @@
         <!-- Page Content  -->
         <div id="content">
             <h2 id="alimentacao">Vendas</h2>
+            <!-- <?php 
+               // if($_GET['id']==3)
+         // echo" <button type=\"submit\" name=\"submit\" class=\"btn btn-success\">Alterado</button>"; 
+             // ?>!-->
             <div class="line"></div>
             <h2 id="alimentacao">Alimentação</h2>
-            <form>
+            <form method="POST" action="../../procedimentos/venda/inserirAlimentacao.php">
               <div class="form-group">
                 <label for="exampleInputEmail1">Nome:</label>
-                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="text" name="nome" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Preço:</label>
-                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="text" name="preco" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Tipo:</label>
                 <div class="radio">
-                  <label><input type="radio" name="optradio" checked> Normal</label>
+                  <label><input type="radio" value="Normal" name="tipo" checked> Normal</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Vegetariana</label>
+                  <label><input type="radio" value="Vegetariana" name="tipo"> Vegetariana</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Bebida</label>
+                  <label><input type="radio" value="Bebida" name="tipo"> Bebida</label>
                 </div>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Validade:</label>
-                <input type="date" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="date" name="validade" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Quantidade:</label>
-                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="number"  name="quantidade" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Quantidade ideal:</label>
-                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="number"  name="qt_ideal" required="required" class="form-control" placeholder="Digite aqui">
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
             </form>
             <div class="line"></div>
             <h2 id="alimentacao">Souvenir</h2>
-            <form>
+            <form method="POST" action="../../procedimentos/venda/inserirSouvenir.php">
               <div class="form-group">
                 <label for="exampleInputEmail1">Nome:</label>
-                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="text" name="nome" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Preço:</label>
-                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="text"  name="preco" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Material:</label>
-                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="text"  name="material" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Quantidade:</label>
-                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="number" name="quantidade" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Quantidade Ideal:</label>
-                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="number" name="qt_ideal" required="required" class="form-control" placeholder="Digite aqui">
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
             </form>
             <div class="line"></div>
             <h2 id="alimentacao">Alimentação</h2>
@@ -136,17 +137,22 @@
                   <th scope="col">Validade</th>
                   <th scope="col">Quantidade</th>
                   <th scope="col">Quantidade Ideal</th>
+                 <th scope="col">Deletar</th>
+                  <th scope="col">Vender</th>
+                  <th scope="col">Alterar</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">-</th>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                 <?php
+                  include ('../../procedimentos/venda/seleciona_todos_alimentacao.php'); 
+                  ?>
                 </tr>
+                <?php
+                 if($valor >0 )
+                    echo " O total de vendas de Alimentação é = R$ " . $valor;
+                  else
+                    "Não ocorreram vendas ainda...";?>
               </tbody>
             </table>
             <div class="line"></div>
@@ -159,19 +165,39 @@
                   <th scope="col">Material</th>
                   <th scope="col">Quantidade</th>
                   <th scope="col">Quantidade Ideal</th>
+                  <th scope="col">Deletar</th>
+                    <th scope="col">Vender</th>
+                  <th scope="col">Alterar</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">-</th>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+               <?php 
+
+                  include ('../../procedimentos/venda/seleciona_todos_souvenir.php'); 
+
+                  ?>
                 </tr>
+                <?php
+                if($valor >0 )
+                  echo " O total de vendas de Souvenir é = R$ " . $valor;
+                else
+                  "Não ocorreram vendas ainda...";?>
               </tbody>
             </table>
-        </div>
+        <div class="line"></div>
+          <h2 id="ingresso">Ingressos</h2>
+          <tbody>
+                        <?php
+              include ('../../procedimentos/venda/seleciona_todos_ingresso.php');
+              if($valor >0 )
+                echo " O total de vendas de Alimentação é = R$ " . $valor;
+              else
+                "Não ocorreram vendas ainda...";
+              ?>
+               <br><button type="submit" name="submit" class="btn btn-primary"><a href="../../procedimentos/venda/inserirIngresso.php">Cadastrar Ingresso</a></button>
+          </tbody>
+                  </div>
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->

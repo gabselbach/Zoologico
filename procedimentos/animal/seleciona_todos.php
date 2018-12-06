@@ -11,12 +11,13 @@ error_reporting(E_ALL);
  	$con->executeQuery();
  	$array = $con->fazLinha();
  	foreach($array as $i => $value) {
- 		
  		echo "<tr><td>". $value['nome_popular']  . "</td>
  			<td>". $value['nome_cientifico']  . "</td>
  			<td>". $value['peso']  . "</td>
 			<td><a href=\"../../procedimentos/animal/deletar.php?id=" . $value['idAnimal'] . "\"><img src=\"../../img/lixeira.png\"/></a></td>
-			<td><a href=\"../../view/animal/alterar.php?id=".$value['idAnimal']."\"><img src=\"../../img/engre.png\"/></a></td>
+			<td><a href=\"../../view/animal/animal_alt.php?id=".$value['idAnimal']."\"><img src=\"../../img/engre.png\"/></a></td>
+			<td><a href=\"../../view/animal/associaAnimalFuncionarioAlimentacao.php?id=".$value['idAnimal']."\">Func/Alimen</a></td>
  			</tr>";
+ 			
  	}
 	 $con->disconnect();

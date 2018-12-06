@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../../style.css">
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -26,19 +27,22 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 align="center">ZooSearch</h3>
-                <a href="../../index.php"> <img src = "../../analysis.png"/>  </a>
+                <img src = "../../analysis.png"/>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Escolha uma das opções abaixo:</p>
                 <li>
+                    <a href="../../index.php">Homepage</a>
+                </li>
+                <li>
                     <a href="../../view/alimentação/alimentacao.php">Alimentação</a>
                 </li>
                 <li>
-                    <a href="./animal.php">Animal</a>
+                    <a href="../../view/animal/animal.php">Animal</a>
                 </li>
                 <li>
-                    <a href="../../view/fornecedor/fornecedor.php">Fornecedor</a>
+                    <a href="./fornecedor.php">Fornecedor</a>
                 </li>
                 <li>
                     <a href="../../view/funcionario/funcionario.php">Funcionário</a>
@@ -58,40 +62,43 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <h2 id="animal">Animal</h2>
-            <form method="POST" action="../../procedimentos/animal/inserir.php">
+            <h2 id="fornecedor">Fornecedor - Alterar Informações</h2>
+            <form>
               <div class="form-group">
-                <label for="exampleInputEmail1">Nome popular:</label>
-                <input type="text" required="required" name="nome_popular" class="form-control" placeholder="Campo de texto">
+                <label for="exampleInputEmail1">Nome:</label>
+                <input type="text" required="required" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Nome científico:</label>
+                <label for="exampleInputEmail1">Telefone:</label>
                 <!-- Colocar os tipos -->
-                <input type="text" required="required" name="nome_cientifico" class="form-control" placeholder="Campo de texto">
+                <input type="text" required="required" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Peso:</label>
-                <input type="text" required="required" name="peso" class="form-control" placeholder="Campo de texto">
+                <label for="exampleInputEmail1">Tipo:</label>
+                <input type="text" required="required" class="form-control" placeholder="Campo de texto">
               </div>
-              <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
+              <div class="form-group">
+                <label for="exampleInputEmail1">E-mail:</label>
+                <input type="email" required="required" class="form-control" placeholder="Campo de texto">
+              </div>
+              <button type="submit" required="required" class="btn btn-primary">Enviar</button>
             </form>
             <div class="line"></div>
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">Nome popular</th>
-                  <th scope="col">Nome científico</th>
-                  <th scope="col">Peso</th>
-                  <th scope="col">Deletar</th>
-                  <th scope="col">Alterar</th>
-                   <th scope="col">Associar</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Telefone</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">E-mail</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <?php 
-  include ('../../procedimentos/animal/seleciona_todos.php'); 
-  ?>
+                  <th scope="row">-</th>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
                 </tr>
               </tbody>
             </table>

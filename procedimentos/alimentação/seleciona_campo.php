@@ -2,8 +2,8 @@
 ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
-	require('../../model/Animal.class.php');
-	$a = new Animal();
+	require('../../model/Alimentação_Animal.class.php');
+	$a = new Alimentação_Animal();
 	$sql = $a->selectNome();
 	if(!isset($flag))
 	$con = new Conexao();
@@ -11,7 +11,9 @@ error_reporting(E_ALL);
  	$con->executeQuery();
  	$array = $con->fazLinha();
  	foreach($array as $i => $value) {
- 		echo "<option value=" . $value['idAnimal']. ">" . $value['nome_popular']  . "</option>";
+ 		if($value['sit']==1){
+ 		echo "<option value=" . $value['idAlimentacao_Animal']. ">" . $value['nome']  . "</option>";
+ 	}
  		
  	}
 	 $con->disconnect();

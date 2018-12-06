@@ -93,4 +93,13 @@
 		$sql ="SELECT * from Animal where idAnimal = $this->idAnimal";
 		return $sql;
 	}
+	function updateAF(){
+	$sql=" UPDATE Animal 
+	set Funcionario_idFuncionario=$this->Funcionario_idFuncionario,
+	 Alimentacao_Animal_idAlimentacao_Animal=$this->Alimentação_idAlimentação
+
+	  WHERE IdAnimal=$this->idAnimal";
+	echo $sql;
+		return $sql;
+	}
 }

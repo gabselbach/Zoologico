@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -21,50 +21,71 @@
 </head>
 
 <body>
-
+    <?php
+     if(isset($_GET['id'])){
+        $id= $_GET['id'];
+    }
+    ?>
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 align="center">ZooSearch</h3>
-               <a href="./index.php"> <img src = "analysis.png"/>  </a>
+                <img src = "../../analysis.png"/>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Escolha uma das opções abaixo:</p>
                 <li>
-                    <a href="./view/alimentação/alimentacao.php">Alimentação</a>
+                    <a href="../../index.php">Homepage</a>
                 </li>
                 <li>
-                    <a href="./view/animal/animal.php">Animal</a>
+                    <a href="../../view/alimentação/alimentacao.php">Alimentação</a>
                 </li>
                 <li>
-                    <a href="./view/fornecedor/fornecedor.php">Fornecedor</a>
+                    <a href="../../view/animal/animal.php">Animal</a>
                 </li>
                 <li>
-                    <a href="./view/funcionario/funcionario.php">Funcionário</a>
+                    <a href="../../view/fornecedor/fornecedor.php">Fornecedor</a>
                 </li>
                 <li>
-                    <a href="./view/material/material.php">Material</a>
+                    <a href="../../view/funcionario/funcionario.php">Funcionário</a>
                 </li>
                 <li>
-                    <a href="./view/triagem/triagem.php">Triagem</a>
+                    <a href="../../view/material/material.php">Material</a>
                 </li>
                 <li>
-                    <a href="./view/venda/venda.php">Venda</a>
+                    <a href="../../view/triagem/triagem.php">Triagem</a>
+                </li>
+                <li>
+                    <a href="./venda.php">Venda</a>
                 </li>
             </ul>
 
         </nav>
 
         <!-- Page Content  -->
-        <div style="background-color: #dcdcdc; " id="content">
-            <h2>ZooSearch</h2>
-            <p style="color: #2e2c2f ">Sistema de gerenciamento para o controle de um Zoológico. Utilize a barra lateral para navegar entre os cadastros e formas de visualização.</p>
-            <img  style="width: 400px; height: 280px; float: left" src="./img/elefante.jpg"/>
-            <img  style="width: 400px; height: 280px; float: left" src="./img/giraffa.jpg"/>
-            <img  style="width: 400px; height: 280px; float: left" src="./img/hipo.jpg"/>
-            <img  style="width: 400px; height: 280px; float: left" src="./img/leao.jpg"/>
+        <div id="content">
+            <div class="line"></div>
+           
+              <h2 id="alimentacao">Associar Alimentação e Funcionário ao Animal</h2>
+             <form method="POST" action="../../procedimentos/animal/associaAnimalFuncionarioAlimentacao.php">
+                   <input type="hidden" name="id" value="<?=$id?>" /> 
+          <div class="form-group">
+                <label for="exampleFormControlSelect1">Funcionário:</label>
+                <select name="funcionario" class="form-control" id="exampleFormControlSelect1">
+                   <?php include('../../procedimentos/funcionario/seleciona_campo.php');?>
+                </select>
+            </div>
+             <div class="form-group">
+                <label for="exampleFormControlSelect1">Alimento:</label>
+                <select name="alimentacao" class="form-control" id="exampleFormControlSelect1">
+                   <?php
+                          require_once('../../procedimentos/alimentação/seleciona_campo.php');?>
+                </select>
+              </div>
+               <button type="submit" name="submit" class="btn btn-primary">Associar</button>
+            </form>
         </div>
     </div>
 

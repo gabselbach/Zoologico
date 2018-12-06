@@ -11,8 +11,9 @@ error_reporting(E_ALL);
  	$con->executeQuery();
  	$array = $con->fazLinha();
  	foreach($array as $i => $value) {
+ 		if($value['sit']==1){
  		echo "<option value=" . $value['idFuncionario']. ">" . $value['nome']  . "</option>";
+ 	}
  		
  	}
- 	if(!isset($flag))
-		$con->disconnect();
+	$con->disconnect();

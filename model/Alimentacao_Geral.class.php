@@ -44,7 +44,7 @@ error_reporting(E_ALL);
 	}
 	 function insert(){
 
-	 	$sql = "INSERT INTO Alimentacao_Geral VALUES"."(NULL,'$this->nome','$this->tipo',$this->preco,$this->quantidade_atual,$this->quantidade_ideal,'$this->validade',1,NULL)";
+	 	$sql = "INSERT INTO Alimentacao_Geral VALUES"."(NULL,'$this->nome','$this->tipo',$this->preco,$this->quantidade_atual,$this->quantidade_ideal,'$this->validade',1)";
 	 return $sql;
 		
 	}

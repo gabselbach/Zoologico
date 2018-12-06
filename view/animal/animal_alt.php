@@ -20,17 +20,22 @@
 </head>
 
 <body>
-
+     <?php 
+            require_once('../../procedimentos/animal/pegadados.php');
+     ?>
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 align="center">ZooSearch</h3>
-                <a href="../../index.php"> <img src = "../../analysis.png"/>  </a>
+                <img src = "../../analysis.png"/>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Escolha uma das opções abaixo:</p>
+                <li>
+                    <a href="../../index.php">Homepage</a>
+                </li>
                 <li>
                     <a href="../../view/alimentação/alimentacao.php">Alimentação</a>
                 </li>
@@ -58,44 +63,25 @@
 
         <!-- Page Content  -->
         <div id="content">
-            <h2 id="animal">Animal</h2>
-            <form method="POST" action="../../procedimentos/animal/inserir.php">
+            <h2 id="animal">Animal - Alterar Informações</h2>
+            <form method="POST" action="../../procedimentos/animal/alterar.php">
+                        <input type="hidden" name="id" value="<?=$id?>" >
               <div class="form-group">
                 <label for="exampleInputEmail1">Nome popular:</label>
-                <input type="text" required="required" name="nome_popular" class="form-control" placeholder="Campo de texto">
+                <input type="text"  name="nome_popular" id="nome"
+        value="<?=$array['nome_popular']?>" required="required" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Nome científico:</label>
                 <!-- Colocar os tipos -->
-                <input type="text" required="required" name="nome_cientifico" class="form-control" placeholder="Campo de texto">
+                <input type="text" name="nome_cientifico" id="nome"   value="<?=$array['nome_cientifico']?>" required="required" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Peso:</label>
-                <input type="text" required="required" name="peso" class="form-control" placeholder="Campo de texto">
+                <input type="text" name="peso" id="peso"  value="<?=$array['peso']?>" required="required" class="form-control" placeholder="Campo de texto">
               </div>
               <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
             </form>
-            <div class="line"></div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Nome popular</th>
-                  <th scope="col">Nome científico</th>
-                  <th scope="col">Peso</th>
-                  <th scope="col">Deletar</th>
-                  <th scope="col">Alterar</th>
-                   <th scope="col">Associar</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <?php 
-  include ('../../procedimentos/animal/seleciona_todos.php'); 
-  ?>
-                </tr>
-              </tbody>
-            </table>
-        </div>
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->

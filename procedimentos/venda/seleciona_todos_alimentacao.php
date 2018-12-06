@@ -27,7 +27,7 @@ error_reporting(E_ALL);
 	 			<td>". $value['quantidade_ideal']  . "</td>
 				<td><a href=\"../../procedimentos/venda/deletarAlimentacao.php?id=" . $value['cod'] . "\"><img src=\"../../img/lixeira.png\"/></a></td>
 				<td><a href=\"../../view/venda/vendaAlimentacao.php?id=" . $value['cod'] . "\">Venda</a></td>
-				<td><a href=\"../../view/venda/alterarAlimentacao.php?id=".$value['cod']."\"><img src=\"../../img/engre.png\"/></a></td>
+				<td><a href=\"../../view/venda/alimentacao_alt.php?id=".$value['cod']."\"><img src=\"../../img/engre.png\"/></a></td>
 	 			</tr>
 	 		";
  		}

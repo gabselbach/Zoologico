@@ -27,14 +27,11 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 align="center">ZooSearch</h3>
-                <img src = "../../analysis.png"/>
+               <a href="../../index.php"> <img src = "../../analysis.png"/>  </a>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Escolha uma das opções abaixo:</p>
-                <li>
-                    <a href="../../index.php">Homepage</a>
-                </li>
                 <li>
                     <a href="../../view/alimentação/alimentacao.php">Alimentação</a>
                 </li>
@@ -63,55 +60,55 @@
         <!-- Page Content  -->
         <div id="content">
             <h2 id="animal">Funcionário</h2>
-            <form>
+            <form  method="POST" action="../../procedimentos/funcionario/inserir.php">
               <div class="form-group">
                 <label for="exampleInputEmail1">Nome:</label>
-                <input type="text" required="required" class="form-control" placeholder="Campo de texto">
+                <input type="text" required="required" name="nome" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Atribuição:</label>
                 <div class="radio">
-                  <label><input type="radio" name="optradio" checked> Tratador</label>
+                  <label><input type="radio" value="1" name="atribuição" checked> Tratador</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Veterinário</label>
+                  <label><input type="radio" value="2" name="atribuição"> Veterinário</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Estoquista</label>
+                  <label><input type="radio" value="3" name="atribuição"> Estoquista</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Vendedor</label>
+                  <label><input type="radio" value="4" name="atribuição"> Vendedor</label>
                 </div>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Salário:</label>
-                <input type="text" required="required" class="form-control" placeholder="Campo de texto">
+                <input type="text" required="required" name="salario" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Data de admissão:</label>
-                <input type="date" required="required" class="form-control" placeholder="Campo de texto">
+                <input type="date" required="required" name="data_admissao" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Telefone:</label>
-                <input type="email" required="required" class="form-control" placeholder="Campo de texto">
+                <input type="text" required="required" name="telefone" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">E-mail:</label>
-                <input type="email" required="required" class="form-control" placeholder="Campo de texto">
+                <input type="email" required="required" name="email" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Rua:</label>
-                <input type="email" required="required" class="form-control" placeholder="Campo de texto">
+                <input type="text" required="required" name="rua" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">CEP:</label>
-                <input type="email" required="required" class="form-control" placeholder="Campo de texto">
+                <input type="text" required="required" name="cep" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Número:</label>
-                <input type="email" required="required" class="form-control" placeholder="Campo de texto">
+                <input type="number" required="required" name="n" class="form-control" placeholder="Campo de texto">
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
             </form>
             <div class="line"></div>
             <table class="table">
@@ -126,19 +123,16 @@
                   <th scope="col">Rua</th>
                   <th scope="col">CEP</th>
                   <th scope="col">Número</th>
+                  <th scope="col">Deletar</th>
+                  <th scope="col">Alterar</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">-</th>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+               <?php 
+
+                include ('../../procedimentos/funcionario/seleciona_todos.php'); 
+                ?>
                 </tr>
               </tbody>
             </table>

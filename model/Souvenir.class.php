@@ -41,7 +41,7 @@
 	}
 	 function insert(){
 
-	 	$sql = "INSERT INTO Souvenir VALUES"."(NULL,'$this->nome',$this->preco,'$this->material',$this->quantidade_atual,$this->quantidade_ideal,NULL)";
+	 	$sql = "INSERT INTO Souvenir VALUES"."(NULL,'$this->nome',$this->preco,'$this->material',$this->quantidade_atual,$this->quantidade_ideal,1)";
 	 return $sql;
 		
 	}

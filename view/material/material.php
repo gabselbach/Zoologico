@@ -27,14 +27,11 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 align="center">ZooSearch</h3>
-                <img src = "../../analysis.png"/>
+                <a href="../../index.php"> <img src = "../../analysis.png"/>  </a>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Escolha uma das opções abaixo:</p>
-                <li>
-                    <a href="../../index.php">Homepage</a>
-                </li>
                 <li>
                     <a href="../../view/alimentação/alimentacao.php">Alimentação</a>
                 </li>
@@ -63,40 +60,40 @@
         <!-- Page Content  -->
         <div id="content">
             <h2 id="animal">Material</h2>
-            <form>
+            <form method="POST" action="../../procedimentos/material/inserir.php">
               <div class="form-group">
                 <label for="exampleInputEmail1">Nome:</label>
-                <input type="text" class="form-control" placeholder="Campo de texto">
+                <input type="text" name="nome" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Tipo:</label>
                 <div class="radio">
-                  <label><input type="radio" name="optradio" checked> Material de escritório</label>
+                  <label><input type="radio" value="1" name="tipo" checked> Material de escritório</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Medicamentos e Materiais veterinários</label>
+                  <label><input type="radio" value="2" name="tipo"> Medicamentos e Materiais veterinários</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Insumos</label>
+                  <label><input type="radio" value="3" name="tipo"> Insumos</label>
                 </div>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Validade:</label>
-                <input type="date" class="form-control" placeholder="Campo de texto">
+                <input type="date"  name="validade" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Quantidade atual:</label>
-                <input type="number" class="form-control" placeholder="Campo de texto">
+                <input type="number"  name="quant_atual" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Quantidade ideal:</label>
-                <input type="number" class="form-control" placeholder="Campo de texto">
+                <input type="number"  name="quant_ideal" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Preço:</label>
-                <input type="text" class="form-control" placeholder="Campo de texto">
+                <input type="text"  name="preco" class="form-control" placeholder="Campo de texto">
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="submit"  name="submit" class="btn btn-primary">Enviar</button>
             </form>
             <div class="line"></div>
             <table class="table">
@@ -108,16 +105,15 @@
                   <th scope="col">Quantidade atual</th>
                   <th scope="col">Quantidade ideal</th>
                   <th scope="col">Preço</th>
+                  <th scope="col">Deletar</th>
+                  <th scope="col">Alterar</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">-</th>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                  <?php 
+                  include ('../../procedimentos/material/seleciona_todos.php'); 
+                  ?>
                 </tr>
               </tbody>
             </table>

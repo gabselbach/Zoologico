@@ -11,7 +11,7 @@ error_reporting(E_ALL);
  	$con->executeQuery();
  	$array = $con->fazLinha();
  	foreach($array as $i => $value) {
- 		
+ 			if($value['sit']==1){
  		echo "<tr><td>". $value['nome']  . "</td>
  			<td>". $value['validade']  . "</td>
  			";
@@ -32,7 +32,8 @@ error_reporting(E_ALL);
 			 echo "
 			 <td>". $value['quantidade']  . "</td>
 			<td><a href=\"../../procedimentos/alimentação/deletar.php?id=" . $value['idAlimentacao_Animal'] . "\"><img src=\"../../img/lixeira.png\"/></a></td>
-			<td><a href=\"../../view/alimentação/alterar.php?id=".$value['idAlimentacao_Animal']."\"><img src=\"../../img/engre.png\"/></a></td>
+			<td><a href=\"../../view/alimentação/alimentacao_alt.php?id=".$value['idAlimentacao_Animal']."\"><img src=\"../../img/engre.png\"/></a></td>
  			</tr>";
+ 		}
  	}
 	 $con->disconnect();

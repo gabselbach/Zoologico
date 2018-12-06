@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors',1);
-ini_set('display_startup_erros',1);
-error_reporting(E_ALL);
 	require('../../model/Funcionario.class.php');
 	require('../../model/Conexao.class.php');
 	if(isset($_POST['submit'])){
@@ -11,5 +8,5 @@ error_reporting(E_ALL);
 		$con->setQuery($sql);
 	 	$con->executeQuery();
 	 	$con->disconnect();
-	 	header('location:../../view/funcionario/listar.php');
+	 	header('location:../../view/funcionario/funcionario.php');
 	}

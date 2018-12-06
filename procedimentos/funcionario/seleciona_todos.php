@@ -11,6 +11,7 @@ error_reporting(E_ALL);
  	$con->executeQuery();
  	$array = $con->fazLinha();
  	foreach($array as $i => $value) {
+ 			if($value['sit']==1){
  		switch ($value['atribuicao']) {
 					case 1:
 						$a ="Tratador";
@@ -28,8 +29,15 @@ error_reporting(E_ALL);
  		echo "<tr><td>". $value['nome']  . "</td>
  			<td>". $a  . "</td>
  			<td>R$ ". $value['salario']  . "</td>
+ 			<td>". $value['data_admissao']  . "</td>
+ 			<td>". $value['telefone']  . "</td>
+ 			<td>". $value['email']  . "</td>
+ 			<td>". $value['rua']  . "</td>
+ 			<td>". $value['cep']  . "</td>
+ 			<td>". $value['n']  . "</td>
 			<td><a href=\"../../procedimentos/funcionario/deletar.php?id=" . $value['idFuncionario'] . "\"><img src=\"../../img/lixeira.png\"/></a></td>
-			<td><a href=\"../../view/funcionario/alterar.php?id=".$value['idFuncionario']."\"><img src=\"../../img/engre.png\"/></a></td>
+			<td><a href=\"../../view/funcionario/funcionario_alt.php?id=".$value['idFuncionario']."\"><img src=\"../../img/engre.png\"/></a></td>
  			</tr>";
+ 		}
  	}
 	 $con->disconnect();

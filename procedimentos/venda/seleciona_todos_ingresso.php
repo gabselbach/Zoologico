@@ -3,7 +3,6 @@ ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
 	require('../../model/Ingresso.class.php');
-	require('../../model/Conexao.class.php');
 	$a = new Ingresso();
 	$sql = $a->select();
 	$con = new Conexao();
@@ -34,10 +33,10 @@ error_reporting(E_ALL);
  			$cont++;
  		echo "<tr><td>". $value['cod']  . "</td>";
  		if($value['situacao']==0){
- 			echo "<td><a href=\"../../procedimentos/venda/cadVendaIngresso.php?id=" . $value['cod'] . "\"/>Vender</a></td>
+ 			echo "<td><button style=\" width:100%;\" type=\"button\" class=\"btn btn-secondary\"><a href=\"../../procedimentos/venda/cadVendaIngresso.php?id=" . $value['cod'] . "\"/>   Vender   </a></button></td>
  			<td>Não Vendido</td></tr>";
  		}else{
- 			echo"<td>Vendido</td>";
+ 			echo"<td><button type=\"button\" class=\"btn btn-success\">Vendido</button></td>";
  			foreach($duo as $i => $t) {
  				if($t['cod'] == $value['cod'])
  					echo"<td>" . $t['data_hora'] . "</td";

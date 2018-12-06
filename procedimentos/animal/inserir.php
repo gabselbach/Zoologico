@@ -1,7 +1,4 @@
 <?php
-if (strcmp(basename($_SERVER['SCRIPT_NAME']), basename(__FILE__)) === 0) {
-    header("location: ../../index.php");
-}
 ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
@@ -14,5 +11,5 @@ error_reporting(E_ALL);
 		$con->setQuery($sql);
 	 	$con->executeQuery();
     	 $con->disconnect(); //Fecha a execução da query query
-    	 header('location:../../view/animal/listar.php');
+    	 header('location:../../view/animal/animal.php');
 	}

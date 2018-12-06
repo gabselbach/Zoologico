@@ -51,7 +51,7 @@
 	
 	 function insert(){
 
-	 	$sql = "INSERT INTO Alimentacao_Animal VALUES"."(NULL,'$this->nome',$this->tipo,$this->quantidade,'$this->validade',NULL)";
+	 	$sql = "INSERT INTO Alimentacao_Animal VALUES"."(NULL,'$this->nome',$this->tipo,$this->quantidade,'$this->validade',1)";
 	 return $sql;
 		
 	}
@@ -67,7 +67,7 @@
 		$this->Alimentação_idAlimentação = $linha['Alimentação_idAlimentação'];
 	}
 	function delete(){
-		$sql = "DELETE from Alimentacao_Animal where idAlimentacao_Animal = $this->idAlimentação_Animal";
+		$sql = " UPDATE Alimentacao_Animal set sit=0 WHERE idAlimentacao_Animal=$this->idAlimentação_Animal";
 		return $sql;
 	}
 	function select(){
@@ -78,4 +78,9 @@
 		$sql ="SELECT * from Alimentacao_Animal where idAlimentacao_Animal = $this->idAlimentação_Animal";
 		return $sql;
 	}
+		function selectNome(){
+		$sql ="SELECT nome,idAlimentacao_Animal,sit from Alimentacao_Animal";
+		return $sql;
+	}
+
 }

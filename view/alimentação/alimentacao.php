@@ -27,14 +27,11 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 align="center">ZooSearch</h3>
-                <img src = "../../analysis.png"/>
+               <a href="../../index.php"> <img src = "../../analysis.png"/>  </a>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Escolha uma das opções abaixo:</p>
-                <li>
-                    <a href="../../index.php">Homepage</a>
-                </li>
                 <li>
                     <a href="./alimentacao.php">Alimentação</a>
                 </li>
@@ -62,32 +59,36 @@
         <!-- Page Content  -->
         <div id="content">
             <h2 id="alimentacao">Alimentação</h2>
-            <form>
+              <form method="POST" action="../../procedimentos/alimentação/inserir.php">
               <div class="form-group">
                 <label for="exampleInputEmail1">Nome:</label>
-                <input type="text" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="text" name="nome" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Tipo:</label>
                 <div class="radio">
-                  <label><input type="radio" name="optradio" checked> Herbívoros</label>
+                  <label><input type="radio"  value="1" name="optradio" checked> Herbívoros</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Carnívoros</label>
+                  <label><input type="radio" value="2" name="optradio"> Carnívoros</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Onívoros</label>
+                  <label><input type="radio" value="3" name="optradio"> Onívoros</label>
                 </div>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Validade:</label>
-                <input type="date" required="required" class="form-control" placeholder="Digite aqui">
+                <input type="date" name="validade" required="required" class="form-control" placeholder="Digite aqui">
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Quantidade:</label>
-                <input type="number" required="required" class="form-control" placeholder="Digite aqui">
+                <label for="exampleInputEmail1">Quantidade Atual:</label>
+                <input type="number" name="quantidade" required="required" class="form-control" placeholder="Digite aqui">
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+                 <!-- <div class="form-group"> -->
+                <!-- <label for="exampleInputEmail1">Quantidade ideal:</label> -->
+                <!-- <input type="number" name="quant_ideal" required="required" class="form-control" placeholder="Digite aqui"> -->
+              <!-- </div> -->
+              <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
             </form>
             <div class="line"></div>
             <table class="table">
@@ -97,14 +98,15 @@
                   <th scope="col">Tipo</th>
                   <th scope="col">Validade</th>
                   <th scope="col">Quantidade</th>
+                  <th scope="col">Deletar</th>
+                  <th scope="col">Alterar</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">-</th>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                <?php 
+  include ('../../procedimentos/animal/alimentacao/seleciona_todos.php'); 
+  ?>
                 </tr>
               </tbody>
             </table>

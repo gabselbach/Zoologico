@@ -11,5 +11,5 @@ error_reporting(E_ALL);
 		$con->setQuery($sql);
 	 	$con->executeQuery();
     	 $con->disconnect(); //Fecha a execução da query query
-    	 header('location:../../view/fornecedor/listar.php');
+    	 header('location:../../view/fornecedor/fornecedor.php');
 	}

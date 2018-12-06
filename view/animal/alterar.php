@@ -8,7 +8,7 @@
 	ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
-			include('../../procedimentos/animal/pegadados.php');
+			require_once('../../procedimentos/animal/pegadados.php');
 	 ?>
 	<form method="POST" action="../../procedimentos/animal/alterar.php">
 		<input type="hidden" name="id" value="<?=$id?>" >

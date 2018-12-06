@@ -27,14 +27,11 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 align="center">ZooSearch</h3>
-                <img src = "../../analysis.png"/>
+               <a href="../../index.php"> <img src = "../../analysis.png"/>  </a>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Escolha uma das opções abaixo:</p>
-                <li>
-                    <a href="../../index.php">Homepage</a>
-                </li>
                 <li>
                     <a href="../../view/alimentação/alimentacao.php">Alimentação</a>
                 </li>
@@ -63,38 +60,39 @@
         <!-- Page Content  -->
         <div id="content">
             <h2 id="animal">Triagem</h2>
-            <form>
+            <form method="POST" action="../../procedimentos/triagem/inserir.php">
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Funcionário:</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select name="funcionario" class="form-control" id="exampleFormControlSelect1">
+                   <?php include('../../procedimentos/funcionario/seleciona_campo.php');?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Animal:</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select name="animal" class="form-control" id="exampleFormControlSelect1">
+                   <?php
+       require_once('../../procedimentos/animal/seleciona_campo.php');?>
                 </select>
               </div>
               <div class="form-group">
+                <label for="exampleInputEmail1">Prescrição:</label>
+                    <textarea  name="prescricao" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Caso o animal precise de uma prescrição de exames, remedios, internação..."></textarea>
+              </div>
+                <div class="form-group">
                 <label for="exampleInputEmail1">Observações:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Caso o animal precise de uma prescrição de exames, remedios, internação..."></textarea>
+                    <textarea  name="prescricao" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Caso o animal precise de uma prescrição de exames, remedios, internação..."></textarea>
+              </div>
+                 <div class="form-group">
+                 <label for="exampleInputEmail1">Diagnostico:</label>
+                    <textarea  name="diagnostico" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="diagnostico"></textarea>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Data:</label>
-                <input type="date" class="form-control" placeholder="Campo de texto">
+                <input name="data" type="date" class="form-control" placeholder="Campo de texto">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Hora:</label>
-                <input type="time" class="form-control" placeholder="Campo de texto">
+                <input name="hora" type="time" class="form-control" placeholder="Campo de texto">
               </div>
               <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
@@ -102,20 +100,21 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">Funcionário</th>
                   <th scope="col">Animal</th>
+                  <th scope="col">Funcionário</th>
                   <th scope="col">Observações</th>
+                   <th scope="col">Prescrição</th>
+                    <th scope="col">Diagnostico</th>
+                   <th scope="col">Liberado</th>
                   <th scope="col">Data</th>
                   <th scope="col">Hora</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">-</th>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                 <?php 
+                  include ('../../procedimentos/triagem/seleciona_todos.php'); 
+                  ?>
                 </tr>
               </tbody>
             </table>

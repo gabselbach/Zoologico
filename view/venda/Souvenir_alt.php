@@ -66,18 +66,30 @@
         <!-- Page Content  -->
         <div id="content">
             <div class="line"></div>
-              <h2 id="alimentacao">Associar Venda de Alimentação</h2>
-            <form method="POST" action="../../procedimentos/venda/cadVendaAlimentacao.php">
-    <?php
-    ini_set('display_errors',1);
-ini_set('display_startup_erros',1); 
-    if(isset($_GET['id'])){
-        $id= $_GET['id'];
-    }
-    include ('../../procedimentos/venda/seleciona_todos_alimentacaovenda.php'); 
-            ?>
-            <input type="number" required="required" name="quantidade_vendida" id="quantidade" placeholder="quantidade vendida" ><br>
-            <button type="submit" name="submit" class="botao submit">Cadastrar Venda</button>
+            <h2 id="alimentacao">Souvenir</h2>
+            <form method="POST" action="../../procedimentos/venda/alterarSouvenir.php">
+                <input type="hidden" name="id" value="<?=$id?>" >
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nome:</label>
+                <input type="text" required="required" class="form-control" name="nome" id="nome" placeholder="nome" value="<?=$array['nome']?>" >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Preço:</label>
+                <input type="text" required="required" class="form-control" name="preco" id="preco" placeholder="preco" value="<?=$array['preco']?>">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Material:</label>
+                <input type="text" required="required" class="form-control"   name="material" id="material" placeholder="material" value="<?=$array['material']?>" >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Quantidade Atual:</label>
+                <input type="number" required="required" class="form-control" name="quantidade" id="quantidade" placeholder="quantidade atual" value="<?=$array['quantidade_atual']?>">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Quantidade Ideal:</label>
+                <input type="number" required="required" class="form-control"  name="qt_ideal" id="qt_ideal" placeholder="quantidade ideal" value="<?=$array['quantidade_ideal']?>">
+              </div>
+              <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
             </form>
     </div>
 

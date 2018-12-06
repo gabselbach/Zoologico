@@ -95,8 +95,7 @@
 		$this->atribuição=$_atribuicao;
 	}
 	 function insert(){
-	 	$sql = "INSERT INTO Funcionario  VALUES" ."(NULL,'$this->nome',$this->atribuição,$this->salario,'$this->data_admissão','$this->email',
-	 		'$this->rua',$this->n,$this->cep,$this->telefone)";
+	 	$sql = "INSERT INTO Funcionario  VALUES" ."(NULL,'$this->nome',$this->atribuição,$this->salario,'$this->data_admissão','$this->email','$this->rua',$this->n,$this->cep,$this->telefone,1)";
 	 return $sql;
 		
 	}
@@ -115,7 +114,7 @@
 		$this->rua = $linha['rua'];
 	}
 	function delete(){
-		$sql = "DELETE from Funcionario where idFuncionario = $this->idFuncionario";
+		$sql = "UPDATE Funcionario set sit=0 WHERE idFuncionario=$this->idFuncionario";
 		return $sql;
 	}
 	function select(){
@@ -123,7 +122,7 @@
 		return $sql;
 	}
 	function selectNome(){
-		$sql ="SELECT nome,idFuncionario from Funcionario";
+		$sql ="SELECT nome,idFuncionario,sit from Funcionario";
 		return $sql;
 	}
 	function selectFuncionario(){

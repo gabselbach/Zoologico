@@ -12,5 +12,5 @@ error_reporting(E_ALL);
 		 $con->setQuery($sql);
 	 	 $con->executeQuery();
 	 	 $con->disconnect();
-	 	 header('location:../../view/alimentação/listar.php');
+	 	 header('location:../../view/alimentação/alimentacao.php');
 	 }

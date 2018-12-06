@@ -35,8 +35,7 @@ error_reporting(E_ALL);
 			 <td>". $value['quantidade_atual']  . "</td>
 			  <td>". $value['quantidade_ideal']  . "</td>
 			<td><a href=\"../../procedimentos/material/deletar.php?id=" . $value['cod'] . "\"><img src=\"../../img/lixeira.png\"/></a></td>
-			<td><a href=\"../../view/material/alterar.php?id=".$value['cod']."\"><img src=\"../../img/engre.png\"/></a></td>
-			<td><a href=\"../../view/material/fornecedor.php\"><img style=\"margin-left:30%\"src=\"../../img/fornecedor.png\"/></a>
+			<td><a href=\"../../view/material/material_alt.php?id=".$value['cod']."\"><img src=\"../../img/engre.png\"/></a></td>
  			</tr>";
  	}
  	if($cont==0){
